@@ -24,17 +24,17 @@
         #foreach ($entry in $entries)
             #set($renderer = $entry.getAssetRenderer() )
             #set($className = $renderer.getClassName() )
-			
+
             #if( $className == "com.liferay.journal.model.JournalArticle" )
                 #set( $journalArticle = $renderer.getArticle() )
-                #set( $document = $saxReaderUtil.read($journalArticle.getContent()) ) 
+                #set( $document = $saxReaderUtil.read($journalArticle.getContent()) )
                 #set( $rootElement = $document.getRootElement() )
                 #set( $xPathSelector = $saxReaderUtil.createXPath("dynamic-element[@name='ProductTitle']") )
                 #set( $productTitle = $xPathSelector.selectSingleNode($rootElement).getStringValue() )
                 #set( $xPathSelector = $saxReaderUtil.createXPath("dynamic-element[@name='ProductImages']") )
                 #set( $productImages = $xPathSelector.selectSingleNode($rootElement).getStringValue() )
                 #set( $xPathSelector = $saxReaderUtil.createXPath("dynamic-element[@name='link']") )
-                #set( $link = $xPathSelector.selectSingleNode($rootElement).getStringValue() ) 
+                #set( $link = $xPathSelector.selectSingleNode($rootElement).getStringValue() )
                 #set( $xPathSelector = $saxReaderUtil.createXPath("dynamic-element[@name='ShortDescription']") )
                 #set( $shortDescription = $xPathSelector.selectSingleNode($rootElement).getStringValue() )
                 #set( $xPathSelector = $saxReaderUtil.createXPath("dynamic-element[@name='SalePrice']") )
@@ -44,28 +44,28 @@
                 #set( $currURL = $themeDisplay.getURLCurrent() )
                 #set( $currPageFriendlyURL = $themeDisplay.getLayout().getFriendlyURL())
                 #if ( $validator.isNotNull($currPageFriendlyURL) && $currURL.contains($currPageFriendlyURL))
-                  #set( $addLink = $themeDisplay.getURLCurrent().replace($currPageFriendlyURL, "/cart"))					
+                  #set( $addLink = $themeDisplay.getURLCurrent().replace($currPageFriendlyURL, "/cart"))
                 #else
-                  #set( $addLink = "$currURL/cart" )					
+                  #set( $addLink = "$currURL/cart" )
                 #end
                 #set( $viewLink = $addLink.replace("/cart","/view"))
-				
+
                 #if ($validator.isNotNull($salePrice))
                     #set( $salePrice = $listPrice )
-                #end                
+                #end
             #end
-                
+
 			#if($validator.isNotNull($productTitle))
         #if($rowIndex == 1)
           <li class="row">
         #end
           <div class="col-md-4">
-            
+
               <div class="card image-card">
                   <div class="card-bg">
-                      <img 
+                      <img
                           alt="thumbnail"
-                          class="img-responsive" 
+                          class="img-responsive"
                           src="$productImages"
                       >
                   </div>
@@ -81,17 +81,18 @@
                           </div>
                       </div>
                       <div class="card-row">
-                        <div class="card-btns">							
-                          <a 
-                            class="btn btn-border-prim btn-sm add-to-cart-js" 
+                        <div class="card-btns">
+                          <a
+                            class="btn-border btn-border--primary add-to-cart-js"
                             data-article-id="$journalArticle.getArticleId()",
                             data-product-title="$productTitle",
                             data-sale-price="$salePrice",
                             data-add-link="$addLink"
+                            href="javascript:;"
                           >
                               Add to Cart
-                          </a> 
-                          <a href="$viewLink?id=$journalArticle.getArticleId()" class="btn btn-border btn-sm">View</a>
+                          </a>
+                          <a href="$viewLink?id=$journalArticle.getArticleId()" class="btn-border">View</a>
                         </div>
                       </div>
                   </div>
@@ -106,5 +107,5 @@
 				#set( $productTitle = 'null')
 			#end
         #end
-    #end        
+    #end
     </ul>

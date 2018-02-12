@@ -1,5 +1,6 @@
 @import "portlet_decorator";
 @import "portlet_hello_world";
+@import "components/buttons";
 @import "components/card";
 @import "components/product-detail-view";
 @import "components/detail-box";
@@ -225,7 +226,7 @@ body {
 	@include sm {
 		padding: 40px 0 30px;
   }
-  
+
   .navbar-header {
     @include sm {
       width: 100%;
@@ -268,28 +269,16 @@ body {
 	}
 }
 
-.btn-border {
-  border-color: #869cad;
-  
-  &.btn {
-    color: #869cad;
-
-    &:hover {
-      color: #869cad;
-      border-color: #869cad;
-    }
-  }
-}
 
 .btn-border-prim {
   border-color: #65b6f0;
-  
+
   &.btn {
     color: #65b6f0;
 
     &:hover {
       color: #65b6f0;
-      border-color: #65b6f0;      
+      border-color: #65b6f0;
     }
   }
 }
@@ -313,7 +302,7 @@ body {
   margin-bottom: 15px;
   margin-top: 30px;
   background-color: #fff;
-  
+
   img{
     display: block;
     max-width: 100%;
