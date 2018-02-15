@@ -1,0 +1,50 @@
+{namespace ClayCard}
+
+/**
+ * This renders the component's whole content.
+ * Note: has to be called ".render".
+ */
+{template .render}
+  // {@param title: string}
+  // {@param? description: string}
+  // {@param? imageAlt: string}
+	// {@param? imageSrc: string}
+
+<div class="card image-card">
+  <div class="card-bg">
+    <img
+      alt="thumbnail"
+      class="img-responsive"
+      src="$productImages"
+    >
+  </div>
+  <div class="card-body">
+    <div class="card-row">
+      <div class="autofit-col autofit-col-expand">
+        <a class=" card-title" href="#1">
+          // $productTitle
+        </a>
+        <div class="card-subtitle">
+          // $shortDescription
+        </div>
+      </div>
+    </div>
+    <div class="card-row">
+      <div class="card-btns">
+        <a
+          class="btn-border btn-border--primary add-to-cart-js"
+          // data-article-id="$journalArticle.getArticleId()",
+          // data-product-title="$productTitle",
+          // data-sale-price="$salePrice",
+          // data-add-link="$addLink"
+          // href="javascript:;"
+        >
+            Add to Cart
+        </a>
+        // <a href="$viewLink?id=$journalArticle.getArticleId()" class="btn-border">View</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{/template}

@@ -58,7 +58,7 @@
 
 			</div>
 
-      
+
 		</div>
 
     <div class="row">
@@ -84,7 +84,7 @@
 		</#if>
 	</section>
 
-	<footer class="container-fluid-1280" id="footer" role="contentinfo">
+	<#--  <footer class="container-fluid-1280" id="footer" role="contentinfo">
 		<#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "barebone") />
     <#assign theme_groupID = htmlUtil.escape(theme_display.getCompanyGroupId()?string) />
     <#assign VOID = freeMarkerPortletPreferences.setValue("groupId", '${group_id}') />
@@ -96,10 +96,10 @@
       defaultPreferences="${freeMarkerPortletPreferences}"
       portletProviderAction=portletProviderAction.VIEW
       instanceId="footercontent"
-      portletName="com_liferay_journal_content_web_portlet_JournalContentPortlet" 
+      portletName="com_liferay_journal_content_web_portlet_JournalContentPortlet"
     />
     ${freeMarkerPortletPreferences.reset()}
-	</footer>
+	</footer>  -->
 </div>
 
 <@liferay_util["include"] page=body_bottom_include />

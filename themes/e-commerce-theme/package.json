@@ -9,16 +9,11 @@
 		"baseTheme": "styled",
 		"screenshot": "",
 		"rubySass": false,
-		"templateLanguage": "ftl",
-		"version": "7.0",
 		"hookModules": [
 			"liferay-theme-es2015-hook"
-		]
-	},
-	"devDependencies": {
-		"gulp": "^3.8.10",
-		"liferay-theme-tasks": "^1.4.2",
-		"liferay-theme-deps-7.0": "~1.2.1"
+		],
+		"templateLanguage": "ftl",
+		"version": "7.0"
 	},
 	"publishConfig": {
 		"tag": "7_0_x"
@@ -26,8 +21,14 @@
 	"dependencies": {
 		"babel-preset-metal-jsx": "^0.1.1",
 		"liferay-theme-es2015-hook": "^0.3.1",
+		"liferay-theme-tasks": "^1.4.2",
 		"metal-component": "^2.16.3",
 		"metal-jsx": "^2.16.4",
 		"metal-soy": "^2.16.4"
+	},
+	"devDependencies": {
+		"gulp": "^3.8.10",
+		"gulp-metal": "^2.2.2",
+		"liferay-theme-deps-7.0": "~1.2.1"
 	}
 }
